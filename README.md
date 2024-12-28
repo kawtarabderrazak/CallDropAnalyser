@@ -23,7 +23,8 @@ L'application repose sur une architecture Spring Boot pour le backend, avec une 
 
 ### Dockerfile
 Voici un extrait du Dockerfile configuré pour le projet :
-Dockerfile
+
+```dockerfile
 # Use the official OpenJDK image as the base image
 FROM openjdk:21-jdk-slim
 
@@ -49,6 +50,7 @@ EXPOSE 8080
 
 # Run the jar file
 ENTRYPOINT ["java", "-jar", "/app/target/CallDropAnalyzer-0.0.1-SNAPSHOT.jar"]
+
 
 
 ### docker-compose.yml
