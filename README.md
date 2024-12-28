@@ -54,6 +54,36 @@ ENTRYPOINT ["java", "-jar", "/app/target/CallDropAnalyzer-0.0.1-SNAPSHOT.jar"]
 
 ```
 
+### docker-compose.yml
+Voici un extrait du fichier docker-compose.yml pour orchestrer les conteneurs :
+
+```yaml
+version: '3.8'
+services:
+  mysqldb:
+    image: mysql:8.0-debian
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_DATABASE: calldropanalyzer
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysqldb
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/calldropanalyzer
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: password
+
+volumes:
+  mysql-data:
+```
 ## Frontend
 
 Actuellement, le frontend n'est pas encore implémenté dans ce projet, mais il est prévu d'utiliser Angular ou React pour développer une interface utilisateur réactive et intuitive.
