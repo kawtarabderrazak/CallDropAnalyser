@@ -146,11 +146,11 @@ docker-compose up --build
    
 
 3. Accédez à l'application :
-4. ```bash
+
    - Backend : [http://localhost:8080](http://localhost:8080)
 
 
-5. Assurez-vous que la base de données est correctement configurée dans application.properties.
+4. Assurez-vous que la base de données est correctement configurée dans application.properties.
 ## Video Demonstration
 
 
