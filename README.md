@@ -52,36 +52,7 @@ EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "/app/target/CallDropAnalyzer-0.0.1-SNAPSHOT.jar"]
 
 
-
-### docker-compose.yml
-Voici un extrait du fichier docker-compose.yml pour orchestrer les conteneurs :
-yaml
-version: '3.8'
-services:
-  mysqldb:
-    image: mysql:8.0-debian
-    environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
-      MYSQL_DATABASE: calldropanalyzer
-    ports:
-      - "3307:3306"
-    volumes:
-      - mysql-data:/var/lib/mysql
-
-  app:
-    build: .
-    ports:
-      - "8080:8080"
-    depends_on:
-      - mysqldb
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/calldropanalyzer
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: password
-
-volumes:
-  mysql-data:
-
+```
 
 ## Frontend
 
@@ -159,6 +130,5 @@ Une fois l'application lancée :
 3. Exportez les rapports pour les opérateurs télécoms.
 
 ## Auteurs
+- *[GRIMA Fatimazahra]* ([GitHub](https://github.com/fatimazahraGrima))
 - *[ABDERRAZAK Kawtar]* ([GitHub](https://github.com/kawtarabderrazak))
-- *[GRIMA Fatimazahra]* ([GitHub](https://github.com/fatimazahraGri ma))
-
