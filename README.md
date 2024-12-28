@@ -157,5 +157,6 @@ Une fois l'application lancée :
 3. Exportez les rapports pour les opérateurs télécoms.
 
 ## Auteurs
-- *[GRIMA Fatimazahra]* ([GitHub](https://github.com/fatimazahraGrima))
 - *[ABDERRAZAK Kawtar]* ([GitHub](https://github.com/kawtarabderrazak))
+- *[GRIMA Fatimazahra]* ([GitHub](https://github.com/fatimazahraGrima))
+
