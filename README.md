@@ -126,20 +126,31 @@ Actuellement, le frontend n'est pas encore implémenté dans ce projet, mais il 
 ### Instructions
 
 1. Clonez le projet :
-   bash
-   git clone <repository_url>
-   cd CallDropAnalyzer
+ 
+Voici les commandes Bash pour cloner le dépôt et accéder au répertoire du projet :
+
+```bash
+git clone <repository_url>
+cd CallDropAnalyzer
+```
+
    
 
 2. Construisez et démarrez les conteneurs Docker :
-   bash
-   docker-compose up --build
+ 
+Voici la commande Bash pour construire et démarrer les conteneurs avec Docker Compose :
+
+```bash
+docker-compose up --build
+```
    
 
 3. Accédez à l'application :
+4. ```bash
    - Backend : [http://localhost:8080](http://localhost:8080)
 
-4. Assurez-vous que la base de données est correctement configurée dans application.properties.
+
+5. Assurez-vous que la base de données est correctement configurée dans application.properties.
 ## Video Demonstration
 
 
