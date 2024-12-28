@@ -158,5 +158,5 @@ Une fois l'application lancée :
 
 ## Auteurs
 - *[ABDERRAZAK Kawtar]* ([GitHub](https://github.com/kawtarabderrazak))
-- *[GRIMA Fatimazahra]* ([GitHub](https://github.com/fatimazahraGrima))
+- *[GRIMA Fatimazahra]* ([GitHub](https://github.com/fatimazahraGri ma))
 
