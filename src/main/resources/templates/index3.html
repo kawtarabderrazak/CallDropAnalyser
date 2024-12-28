@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call Drop Report</title>
+  <style>
+    /* basic css to see better layout, no map */
+
+    body{      font-family: Arial, sans-serif;  margin: 20px;  }
+    h1 { text-align: center;  }
+    .input-group  {     margin-bottom: 10px;   }
+    input , button{    padding: 8px;   }
+    pre {  background-color: #f0f0f0;   padding: 10px;  overflow-x: auto;}
+
+  </style>
+</head>
+<body>
+<h1>Call Drop Analyzer Report Generation</h1>
+
+<div class="input-group">
+  <label for="startDate">Start Date:</label>
+  <input type="datetime-local" id="startDate" name="startDate">
+</div>
+
+<div class="input-group">
+
+  <label for="endDate">End Date:</label>
+  <input type="datetime-local" id="endDate" name="endDate">
+</div>
+
+<button id="generateReportButton">Generate Report</button>
+
+<div id="reportOutput">
+  <pre id="reportText"></pre>
+</div>
+
+
+<script>
+
+
+  document.getElementById('generateReportButton').addEventListener('click',  async  function () {
+
+    let startDate = document.getElementById('startDate').value ;
+    let endDate =   document.getElementById('endDate').value ;
+
+    if(!startDate) {  startDate = new Date(124,1,1).toISOString().slice(0, 19).replace('T', ' ' )  }
+      else  {   try {   startDate = new Date(startDate).toISOString().slice(0, 19).replace('T', ' ')      ; }       catch(err)   {    startDate =new Date(124,1,1).toISOString().slice(0, 19).replace('T', ' ') ;        };    };
+
+
+
+    if (!endDate) {   endDate= new Date().toISOString().slice(0, 19).replace('T', ' ');  } else {  try  {   endDate=  new Date(endDate).toISOString().slice(0, 19).replace('T', ' ')    }    catch(error)  {       endDate= new Date().toISOString().slice(0, 19).replace('T', ' ');           }  ;  }   ;   // validate all parameters types from input before  create the url from data
+    console.log(" html implementation validation  data input before api fetch " , startDate , endDate ) // validate object type if required
+
+    fetch(`/api/reports/callreport?startDate=${startDate}&endDate=${endDate}`)
+
+            .then(response => response.text())  // also testing the different result type implementation
+            .then(report=> {
+              document.getElementById('reportText').innerHTML=report;
+              console.log (" fetch call complete. and display the  text (html ) as results from data fetch from the  API  : ", report   ) ;    })   // check if valid text or html
+            .catch(error=>{
+              console.error(' Fetch data from report has errors also  :'  , error);
+              document.getElementById('reportText').innerHTML =" an error occurred  when data  fetching from API with a specific implementation settings / type data , also use browser / network to see the error details ";
+
+            });   })  ;
+</script>
+</body>
+</html>
