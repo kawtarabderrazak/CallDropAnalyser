@@ -84,9 +84,7 @@ services:
 volumes:
   mysql-data:
 ```
-## Frontend
 
-Actuellement, le frontend n'est pas encore implémenté dans ce projet, mais il est prévu d'utiliser Angular ou React pour développer une interface utilisateur réactive et intuitive.
 
 ## Backend
 
