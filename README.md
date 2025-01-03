@@ -84,7 +84,21 @@ services:
 volumes:
   mysql-data:
 ```
+## Frontend
 
+### Technologies utilisées :
+1. *HTML5* : Pour structurer les pages et intégrer les fonctionnalités interactives.
+2. *CSS3* : Pour styliser et personnaliser l'apparence des pages.
+
+### Composants principaux :
+1. **Carte interactive : Affichage des appels interrompus sur une carte.
+2. *Tableau ou graphiques* : Présentation des statistiques des appels (taux d'interruption, zones affectées).
+3. **Formulaire : Pour la génération ou la visualisation des rapports.
+
+### Caractéristiques :
+- *Design responsive pour une utilisation sur mobile et desktop*.
+-*Interface intuitive pour naviguer facilement entre les sections (statistiques, carte, rapports)*.
+-*Utilisation de transitions et animations CSS pour une meilleure expérience utilisateur*.
 
 ## Backend
 
