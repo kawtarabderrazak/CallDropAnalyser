@@ -13,7 +13,13 @@ CallDropAnalyzer est une application innovante pour analyser les causes des inte
 - [Utilisation](#utilisation)
 - [Contributions](#contributions)
 
+
+Software architecture
+
+![image](https://github.com/user-attachments/assets/e5ea3364-c23b-4093-907c-afc36811f274)
+
 ---
+
 
 ## Architecture Logicielle
 
